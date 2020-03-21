@@ -13,7 +13,6 @@
 		91AF25452424773300059E88 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91AF25432424773300059E88 /* Main.storyboard */; };
 		91AF25472424773800059E88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91AF25462424773800059E88 /* Assets.xcassets */; };
 		91AF254A2424773800059E88 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91AF25482424773800059E88 /* LaunchScreen.storyboard */; };
-		91D680EC2426232D00AA0DA4 /* BroswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D680EB2426232D00AA0DA4 /* BroswerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +24,6 @@
 		91AF25462424773800059E88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		91AF25492424773800059E88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		91AF254B2424773800059E88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		91D680EB2426232D00AA0DA4 /* BroswerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BroswerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +59,6 @@
 				91AF253D2424773300059E88 /* AppDelegate.swift */,
 				91AF253F2424773300059E88 /* SceneDelegate.swift */,
 				91AF25412424773300059E88 /* ViewController.swift */,
-				91D680EB2426232D00AA0DA4 /* BroswerViewController.swift */,
 				91AF25432424773300059E88 /* Main.storyboard */,
 				91AF25462424773800059E88 /* Assets.xcassets */,
 				91AF25482424773800059E88 /* LaunchScreen.storyboard */,
@@ -142,7 +139,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				91AF25422424773300059E88 /* ViewController.swift in Sources */,
-				91D680EC2426232D00AA0DA4 /* BroswerViewController.swift in Sources */,
 				91AF253E2424773300059E88 /* AppDelegate.swift in Sources */,
 				91AF25402424773300059E88 /* SceneDelegate.swift in Sources */,
 			);
