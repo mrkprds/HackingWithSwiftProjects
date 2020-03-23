@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		913276C22428BF4F008F7DD3 /* BrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913276C12428BF4F008F7DD3 /* BrowserViewController.swift */; };
 		91AF253E2424773300059E88 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AF253D2424773300059E88 /* AppDelegate.swift */; };
 		91AF25402424773300059E88 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AF253F2424773300059E88 /* SceneDelegate.swift */; };
 		91AF25422424773300059E88 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AF25412424773300059E88 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		913276C12428BF4F008F7DD3 /* BrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserViewController.swift; sourceTree = "<group>"; };
 		91AF253A2424773300059E88 /* Project4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91AF253D2424773300059E88 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		91AF253F2424773300059E88 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				91AF253D2424773300059E88 /* AppDelegate.swift */,
 				91AF253F2424773300059E88 /* SceneDelegate.swift */,
 				91AF25412424773300059E88 /* ViewController.swift */,
+				913276C12428BF4F008F7DD3 /* BrowserViewController.swift */,
 				91AF25432424773300059E88 /* Main.storyboard */,
 				91AF25462424773800059E88 /* Assets.xcassets */,
 				91AF25482424773800059E88 /* LaunchScreen.storyboard */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				91AF25422424773300059E88 /* ViewController.swift in Sources */,
+				913276C22428BF4F008F7DD3 /* BrowserViewController.swift in Sources */,
 				91AF253E2424773300059E88 /* AppDelegate.swift in Sources */,
 				91AF25402424773300059E88 /* SceneDelegate.swift in Sources */,
 			);
