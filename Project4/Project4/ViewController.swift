@@ -18,6 +18,8 @@ class ViewController: UITableViewController, WKNavigationDelegate{
         
         title = "Select a website"
         navigationController?.navigationBar.prefersLargeTitles = true
+
+        
     }
     
     
@@ -36,7 +38,7 @@ class ViewController: UITableViewController, WKNavigationDelegate{
             for website in websites{
                 vc.websites.append(website)
             }
-            
+            navigationController?.pushViewController(vc, animated: true)
         }
     }
 }

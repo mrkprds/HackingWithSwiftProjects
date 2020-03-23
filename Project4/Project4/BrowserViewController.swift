@@ -13,22 +13,26 @@ class BrowserViewController: UIViewController, WKNavigationDelegate {
     var webView: WKWebView!
     var progressView: UIProgressView!
     var websites = [String]()
+    @IBOutlet var webViewContainer: UIView!
     
     override func loadView() {
         webView = WKWebView()
         webView.navigationDelegate = self
         
         view = webView
-        
+       
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+           
+        navigationItem.largeTitleDisplayMode = .never
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Open", style: .plain, target: self, action: #selector(openTapped))
         
         let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let refresh = UIBarButtonItem(barButtonSystemItem: .refresh, target: webView, action: #selector(webView.reload))
+        let goBack = UIBarButtonItem(title: "Back", style: .plain, target: webView, action: #selector(webView.goBack))
+        let goForward = UIBarButtonItem(title: "Forward", style: .plain, target: webView, action: #selector(webView.goForward))
         
         let url = URL(string: "https://" + websites[0])!
         webView.load(URLRequest(url: url))
@@ -38,7 +42,7 @@ class BrowserViewController: UIViewController, WKNavigationDelegate {
         progressView.sizeToFit()
         let progressButon = UIBarButtonItem(customView: progressView )
         
-        toolbarItems = [progressButon,  spacer, refresh]
+        toolbarItems = [progressButon, spacer, refresh, goBack, goForward]
         navigationController?.isToolbarHidden = false
         
         webView.addObserver( self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
@@ -69,7 +73,11 @@ class BrowserViewController: UIViewController, WKNavigationDelegate {
                    if host.contains(website){
                        decisionHandler(.allow)
                        return
-                   }
+                   }else{
+                    let ac = UIAlertController(title: "Oops", message: "Sorry, you're not allowed to go to that domain.", preferredStyle: .alert)
+                    ac.addAction(UIAlertAction(title: "Close", style: .cancel, handler: nil))
+                    present(ac, animated: true)
+                }
                }
            }
            
@@ -84,7 +92,6 @@ class BrowserViewController: UIViewController, WKNavigationDelegate {
        func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
            title = webView.title
        }
-    
 
     /*
     // MARK: - Navigation
