@@ -13,6 +13,7 @@ class BrowserViewController: UIViewController, WKNavigationDelegate {
     var webView: WKWebView!
     var progressView: UIProgressView!
     var websites = [String]()
+    var selectedWebsite: String!
     @IBOutlet var webViewContainer: UIView!
     
     override func loadView() {
@@ -34,7 +35,7 @@ class BrowserViewController: UIViewController, WKNavigationDelegate {
         let goBack = UIBarButtonItem(title: "Back", style: .plain, target: webView, action: #selector(webView.goBack))
         let goForward = UIBarButtonItem(title: "Forward", style: .plain, target: webView, action: #selector(webView.goForward))
         
-        let url = URL(string: "https://" + websites[0])!
+        let url = URL(string: "https://" + selectedWebsite)!
         webView.load(URLRequest(url: url))
         webView.allowsBackForwardNavigationGestures = true
         
@@ -73,15 +74,13 @@ class BrowserViewController: UIViewController, WKNavigationDelegate {
                    if host.contains(website){
                        decisionHandler(.allow)
                        return
-                   }else{
-                    let ac = UIAlertController(title: "Oops", message: "Sorry, you're not allowed to go to that domain.", preferredStyle: .alert)
-                    ac.addAction(UIAlertAction(title: "Close", style: .cancel, handler: nil))
-                    present(ac, animated: true)
-                }
+                   }
                }
            }
-           
            decisionHandler(.cancel)
+           let ac = UIAlertController(title: "Oops", message: "Sorry, you're not allowed to go to that domain.", preferredStyle: .alert)
+           ac.addAction(UIAlertAction(title: "Close", style: .cancel, handler: nil))
+           present(ac, animated: true)
        }
        
        func openPage(action: UIAlertAction){

@@ -38,6 +38,7 @@ class ViewController: UITableViewController, WKNavigationDelegate{
             for website in websites{
                 vc.websites.append(website)
             }
+            vc.selectedWebsite = websites[indexPath.row]
             navigationController?.pushViewController(vc, animated: true)
         }
     }
