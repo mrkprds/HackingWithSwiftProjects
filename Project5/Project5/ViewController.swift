@@ -86,7 +86,7 @@ class ViewController: UITableViewController {
                         return
                     }else{
                         errorTitle = "Word not recognized"
-                        errorMessage = "tf is that shit??"
+                        errorMessage = "Not a valid word"
                     }
                 }else{
                     errorTitle = "Word Used"
@@ -134,12 +134,6 @@ class ViewController: UITableViewController {
         //use utf16 for counting words in apple frameworks
         let range  = NSRange(location: 0, length: word.utf16.count)
         let misspelledRange =  checker.rangeOfMisspelledWord(in: word, range: range, startingAt: 0, wrap: false, language: "en")
-        
-        if word.utf16.count == 3{
-            return false
-        }else{
-            
-        }
         return misspelledRange.location == NSNotFound
     }
 }
