@@ -9,7 +9,8 @@
 import Foundation
 
 protocol PetitionsDelgate{
-    func getPetitions(_ petitions: PetitionsData?)
+    func didGetPetitions(_ petitionManager: PetitionManager, _ petitions: PetitionsData?)
+    func didFailWithError(_ error: Error)
 }
 
 struct PetitionManager{
@@ -21,12 +22,12 @@ struct PetitionManager{
             let session = URLSession(configuration: .default)
             let task = session.dataTask(with: url) { (data, urlResponse, err) in
                 if let err = err{
-                    print(err)
+                    self.petitionsDelegate?.didFailWithError(err)
                 }
                 if let validData = data{
                     if let petitions = self.parseJSON(in: validData){
                         DispatchQueue.main.async {
-                            self.petitionsDelegate?.getPetitions(petitions)
+                            self.petitionsDelegate?.didGetPetitions(self, petitions)
                         }
                     }
                 }
@@ -42,7 +43,7 @@ struct PetitionManager{
             return jsonPetitions
             
         }catch{
-            print(error)
+            petitionsDelegate?.didFailWithError(error)
             return nil
         }
     }

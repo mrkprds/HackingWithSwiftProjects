@@ -15,15 +15,18 @@ class ViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let search = UIBarButtonItem(
+        let search =
+            UIBarButtonItem(
                 barButtonSystemItem: .search,
                 target: self,
                 action: #selector(showSearchFilter))
         
-        let reload = UIBarButtonItem(
+        let reload =
+            UIBarButtonItem(
                 barButtonSystemItem: .refresh,
                 target: self,
                 action: #selector(loadParsedData))
+        
         navigationItem.leftBarButtonItems = [search, reload]
 
         navigationItem.rightBarButtonItem =
@@ -111,10 +114,6 @@ class ViewController: UITableViewController {
                 return
             }
         }
-    }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return petitions.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

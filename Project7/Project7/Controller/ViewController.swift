@@ -108,7 +108,11 @@ class ViewController: UITableViewController{
 }
 
 extension ViewController: PetitionsDelgate{
-    func getPetitions(_ petitions: PetitionsData?) {
+    func didFailWithError(_ error: Error) {
+        print(error)
+    }
+    
+    func didGetPetitions(_ petitionManager: PetitionManager, _ petitions: PetitionsData?) {
         if let petitions = petitions{
             self.petitions.list = petitions.results
             tableView.reloadData()
